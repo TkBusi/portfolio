@@ -1,0 +1,22 @@
+
+.home{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("files/img/bg.jpg");
+    background-position: center;
+}
+
+
+.intro{
+    padding: 250px 0;
+    margin-left: 45%;
+    text-align: left;
+    color: lightgreen;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.intro > p{
+    transition: opacity .5s ease-in-out;
+}
