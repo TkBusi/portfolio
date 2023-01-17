@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Route, Routes } from "react-router-dom";
+import {HashRouter, Route, Routes } from "react-router-dom";
 import Home from './home';
 import About from './about';
 import Projects from './projects';
@@ -27,15 +27,15 @@ const renderPage = function(Prop : React.FC){
 }
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/portfolio" element={renderPage(Home)} />
-        <Route path="/portfolio/about" element={renderPage(About)} />
-        <Route path="/portfolio/projects" element={renderPage(Projects)} />
-        <Route path="/portfolio/blogs" element={renderPage(Blogs)} />
-        <Route path="/portfolio/*" element={renderPage(Home)} />
+        <Route path="/" element={renderPage(Home)} />
+        <Route path="/about" element={renderPage(About)} />
+        <Route path="/projects" element={renderPage(Projects)} />
+        <Route path="/blogs" element={renderPage(Blogs)} />
+        <Route path="/*" element={renderPage(Home)} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
