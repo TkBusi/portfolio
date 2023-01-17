@@ -29,11 +29,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={renderPage(Home)} />
-        <Route path="/about" element={renderPage(About)} />
-        <Route path="/projects" element={renderPage(Projects)} />
-        <Route path="/blogs" element={renderPage(Blogs)} />
-        <Route path="/*" element={renderPage(Home)} />
+        <Route path="/portfolio" element={renderPage(Home)} />
+        <Route path="/portfolio/about" element={renderPage(About)} />
+        <Route path="/portfolio/projects" element={renderPage(Projects)} />
+        <Route path="/portfolio/blogs" element={renderPage(Blogs)} />
+        <Route path="/portfolio/*" element={renderPage(Home)} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
