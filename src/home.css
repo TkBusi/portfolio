@@ -17,6 +17,24 @@
     font-weight: bold;
 }
 
-.intro > p{
-    transition: opacity .5s ease-in-out;
+.typing{
+    animation: typer 1s ease-in infinite alternate; 
 }
+
+@keyframes appear{
+    0%{
+        color: lightgreen;
+    }
+    100%{
+        color: white;
+    }
+}
+@keyframes typer{
+    0%{
+        border-right: 3px solid rgba(144,238,144,255);
+    }
+    100%{
+        border-right: 3px solid rgba(144,238,144,0);
+    }
+}
+
