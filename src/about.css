@@ -1,0 +1,15 @@
+.about{
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 50px;
+    margin-top: 65px;
+    margin-bottom: 70px;
+    border-bottom: 5px;
+}

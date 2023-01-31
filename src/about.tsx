@@ -5,7 +5,9 @@ import './about.css';
 function About() {
   return (
     <div className="about">
-      about
+      <div className='title'>About Tom</div>
+      <div className='col-0'>skills</div>
+      <div className='col-1'></div>
     </div>
   );
 }

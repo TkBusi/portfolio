@@ -11,7 +11,7 @@ function Footer() {
             <a href="mailto:tshin0346@gmail.com">
               <BsInbox title='Email'/>
             </a>
-            <a href="https://github.com/TkBusi">
+            <a href="https://github.com/TomShenDev">
               <BsGithub title="Github"/>
             </a>
             <a href="https://www.linkedin.com/in/tom-shen-s/">

@@ -1,7 +1,6 @@
 
 .page-top{
   flex: 0 1 auto;
-  background-color: rgb(50,50,50);
   color: rgb(235,235,235);
   display: flex;
   overflow: hidden;

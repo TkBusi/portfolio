@@ -1,4 +1,53 @@
+.projects{
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 50px;
+    margin-top: 65px;
+    margin-bottom: 70px;
+    border-bottom: 5px;
+    border-color: white;
+}
 
 .section-links{
-    
+    position: relative;
+    list-style-type: none;
+    padding-left: 0;
 }
+
+.section{
+    font-size: 35px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 20px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (min-width: 990px) {
+    .section{
+        display: inline-block;
+    }
+}
+
+.selected, .section:hover, .section.active{
+    background-color: #3A3A3A;
+}
+
+.selected{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 20px;
+    z-index: -1;
+}
+
