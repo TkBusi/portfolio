@@ -29,7 +29,7 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
-        <Route path="/" element={renderPage(Home)} />
+        <Route path="/" element={renderPage(Home)}/>
         <Route path="/about" element={renderPage(About)} />
         <Route path="/projects" element={renderPage(Projects)} />
         <Route path="/blogs" element={renderPage(Blogs)} />

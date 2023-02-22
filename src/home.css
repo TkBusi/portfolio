@@ -23,22 +23,4 @@
     display: none;
 }
 
-.typing{
-    border-right: 3px solid rgba(144,238,144,255);
-    animation: typer 1s steps(1) infinite ; 
-}
-
-@keyframes appear{
-    0%{
-        color: lightgreen;
-    }
-    100%{
-        color: white;
-    }
-}
-@keyframes typer{
-    50%{
-        border-right: transparent;
-    }
-}
 

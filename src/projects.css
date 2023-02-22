@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .projects{
     color: white;
     margin-left: auto;
@@ -15,13 +19,19 @@
     border-color: white;
 }
 
-.section-links{
+.section-list{
+    position: sticky;
+    top: 0;
+    background-color: rgb(50,50,50);
+}
+
+.links-list{
     position: relative;
     list-style-type: none;
     padding-left: 0;
 }
 
-.section{
+.link{
     font-size: 35px;
     width: 200px;
     height: 50px;
@@ -33,12 +43,12 @@
 }
 
 @media (min-width: 990px) {
-    .section{
+    .link{
         display: inline-block;
     }
 }
 
-.selected, .section:hover, .section.active{
+.selected, .link:hover, .link.active{
     background-color: #3A3A3A;
 }
 
@@ -51,3 +61,33 @@
     z-index: -1;
 }
 
+.project{
+    padding: 20px 0;
+}
+
+.project-background{
+    display: block;
+    padding-top: 15px;
+    height: 512px;
+    margin: auto;
+}
+
+.project-title{
+    font-size: 30px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.project-subheader{
+    padding: 10px 0;
+}
+
+.project-title, .project-subheader{
+    text-align: center;
+}
+
+.project-description{
+    font-weight: 550;
+    line-height: 2rem;
+    margin: 0 10%;
+}
