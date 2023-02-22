@@ -24,8 +24,8 @@ function Home() {
   <div className="intro">
     <div><span className='typing'>Hi I am Tom.</span></div>
     <div><span>I am a {position[i0]}.</span></div>
-    <div><span>I code {language[i1]}.</span></div>
-    <div><span>I shine at {skills[i2]}.</span></div>
+    {/*<div><span>I code {language[i1]}.</span></div>
+    <div><span>I shine at {skills[i2]}.</span></div>*/}
   </div>;
 
   // run the typewriter
