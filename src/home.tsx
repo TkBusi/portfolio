@@ -10,22 +10,51 @@ const skills = ["Pytorch", "Django", "Pygame", "Spring", "Flutter", "Sling Model
 function Home() {
 
   const [seconds, setSeconds] = useState(0);
-
+  let i0 = 0, i1 = 2, i2 = 7;
+  var sentences = new Array();
+  let isShow = false
   useEffect(() => {
     document.title = "Tom Shen | Dev Space";
+    let introEle = document.getElementsByClassName("intro")[0];
+    // store the content and remove from display
+    let spans = Array.from(introEle.getElementsByTagName('span'))
+    if(sentences.length == 0){
+      sentences = spans.map((i) => {return i.innerText});
+    }
+    spans.forEach(i => i.innerText="")
+    let x = 0, y = 0;
     const interval = setInterval(() => {
-      setSeconds(seconds => seconds + 1);
-    }, 1000);
+      let part1 = "", part2 = "";
+      setSeconds(seconds => seconds + 0.1);
+      if(sentences.length > x){
+        // remove annotation if exist
+        if(isShow)
+          spans[x].textContent = spans[x].textContent?.slice(0, -1)!;
+        // add a word back every 0.5s
+        spans[x].textContent += sentences[x][y];
+        y++;
+        if(sentences[x].length == y){
+          y = 0
+          x++;
+          return;
+        }
+        // add annotation if not exist
+        if(!isShow)
+          spans[x].textContent += "|";
+        // reverse isShow after changing
+        isShow = !isShow;
+      }
+
+    }, 100);
     return () => clearInterval(interval);
   }, []);
 
-  let i0 = 0, i1 = 0, i2 = 0;
   const intro = 
   <div className="intro">
-    <div><span className='typing'>Hi I am Tom.</span></div>
+    <div><span>Hi I am Tom.</span></div>
     <div><span>I am a {position[i0]}.</span></div>
-    {/*<div><span>I code {language[i1]}.</span></div>
-    <div><span>I shine at {skills[i2]}.</span></div>*/}
+    <div><span>I code {language[i1]}.</span></div>
+    <div><span>I shine at {skills[i2]}.</span></div>
   </div>;
 
   // run the typewriter
