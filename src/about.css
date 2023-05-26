@@ -13,3 +13,44 @@
     margin-bottom: 70px;
     border-bottom: 5px;
 }
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.row > div{
+    width: 600px;
+    margin: 50px 100px;
+}
+
+.text{
+    padding: 10px;
+}
+
+.experience{
+    margin: 10px 0;
+    width: 450px;
+    height: 50px;
+    border: solid rgb(200,200,200);
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+
+.dates, .location {
+    width: 50%;
+    float: right;
+}
+
+.job-title, .company {
+    width: 50%;
+    float: left;
+}
+
+.skills > img{
+    height: 70px;
+    display: block;
+}
