@@ -1,17 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './home.css';
-
-const position = ["software engineer", "web developer", "game developer"];
-const language = ["Python", "Java", "JavaScript", "SQL", ".NET"]
-const skills = ["Pytorch", "Django", "Pygame", "Spring", "Flutter", "Sling Models", "React", "Node.js", "Angular", "MySQL", "NoSQL", "SQLite", "Unity", "Game Design", "3D Modeling"]
+const info = [
+  ["software engineer", "web developer", "game developer"],
+  ["Python", "Java", "JavaScript", "SQL", ".NET"],
+  ["Pytorch", "Django", "Pygame", "Spring", "Flutter", "Sling Models", "React", "Node.js", "Angular", "MySQL", "NoSQL", "SQLite", "Unity", "Game Design", "3D Modeling"]
+]
 
 function Home() {
 
   const [seconds, setSeconds] = useState(0);
-  let i0 = 0, i1 = 2, i2 = 7;
+  const i = [0, 0, 0]
   var sentences = new Array();
   let isShow = false
+  var interval : NodeJS.Timeout;
+
+  function addSpan(){
+
+  }
+
+  function RemoveSpan(){
+
+  }
+
   useEffect(() => {
     document.title = "Tom Shen | Dev Space";
     let introEle = document.getElementsByClassName("intro")[0];
@@ -22,8 +33,7 @@ function Home() {
     }
     spans.forEach(i => i.innerText="")
     let x = 0, y = 0;
-    const interval = setInterval(() => {
-      let part1 = "", part2 = "";
+    interval = setInterval(() => {
       setSeconds(seconds => seconds + 0.1);
       if(sentences.length > x){
         // remove annotation if exist
@@ -43,17 +53,16 @@ function Home() {
         // reverse isShow after changing
         isShow = !isShow;
       }
-
     }, 100);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval)
   }, []);
 
   const intro = 
   <div className="intro">
-    <div><span>Hi I am Tom.</span></div>
-    <div><span>I am a {position[i0]}.</span></div>
-    <div><span>I code {language[i1]}.</span></div>
-    <div><span>I shine at {skills[i2]}.</span></div>
+    <div><span className='greetings'>Hi I am Tom.</span></div>
+    <div><span>I am a {info[0][i[0]]}.</span></div>
+    <div><span>I code {info[1][i[1]]}.</span></div>
+    <div><span>I love {info[2][i[2]]}.</span></div>
   </div>;
 
   /*

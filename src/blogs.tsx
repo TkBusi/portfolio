@@ -30,7 +30,7 @@ let blogs = [
 ]
 
 function Blogs() {
-  const [monthIndex, setMonthIndex] = useState()
+  const [month, setMonth] = useState(blogs[0].date.split("-")[0] + "-" + blogs[0].date.split("-")[1])
   useEffect(() => {
     document.title = "Tom Shen | Blogs";
   }, []);
@@ -42,16 +42,21 @@ function Blogs() {
             blogs.map(i => i.date.split("-")[0] + "-" + i.date.split("-")[1])
             .filter((value,index,array) => array.indexOf(value) === index)
             .map((im) =>
-              <div>
+              <div onClick={() => {
+                // set the following month
+                setMonth(im)
+              }}>
                 {im}
               </div>
             )
           }
         </div>
         <hr/>
-        <div className='blogs'>
+        <div className='blogs-content'>
           {
-
+            // temporary show content only
+            blogs.filter(blog => (blog.date.split("-")[0] + "-" + blog.date.split("-")[1]) == month)
+            .map(blog => <div>{blog.content}</div>)
           }
         </div>
     </div>

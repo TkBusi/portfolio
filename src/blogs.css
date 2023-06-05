@@ -8,6 +8,12 @@
 }
 
 .catogory-by-month{
+    width: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.blogs-content, .catogory-by-month{
     margin: auto;
     height: 50%;
 }
