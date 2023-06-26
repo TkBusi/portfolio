@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import { JsxElement } from 'typescript';
 import AnimeListImg from './files/img/to_be_updated.png'
@@ -6,14 +6,15 @@ import MobileRacingGame from './files/img/anime_reviews_holder.jpg'
 import './projects.css';
 import { getEventListeners } from 'events';
 function Projects() {
+  
   useEffect(() => {
     document.title = "Tom Shen | Projects";
-    window.removeEventListener("scroll", checkScroll)
     window.addEventListener("scroll", checkScroll)
+    return(() => window.removeEventListener("scroll", checkScroll))
   }, []);
 
-  const checkScroll = () => {
-    console.log("checkScroll")
+  const checkScroll = useCallback(() => {
+    console.log("check scroll")
     var sections = document.getElementsByClassName("section");
     for(let i = 0;i < sections.length; i++){
       let ele = sections[i] as HTMLElement
@@ -25,11 +26,10 @@ function Projects() {
         target.classList.add("active");
       }
     }
-  };
+  }, [])
+
   const scrollSection = (loc : string) =>{
-    // remove the checkScroll until scrolling complete to avoid flickering
-    window.removeEventListener("scroll", checkScroll);
-    clearTimeout(timer);
+    window.removeEventListener("scroll", checkScroll)
     // move the show button
     var target = document.getElementsByClassName(loc + "-link")[0];
     var selected = document.getElementsByClassName("active")[0] as HTMLElement;
@@ -38,17 +38,16 @@ function Projects() {
     var scrollTarget = document.getElementsByClassName(loc)[0];
     scrollTarget.scrollIntoView();
     // add back checkscroll after scrolling complete
-    var timer : any = null;
+    var timer : any;
     window.addEventListener('scroll', function time() {
-        if(timer !== null) {
-          clearTimeout(timer);        
-        }
+        clearTimeout(timer);        
         timer = setTimeout(function() {
-          window.addEventListener("scroll", checkScroll);
-          window.removeEventListener("scroll", time);
+          window.removeEventListener("scroll", time)
+          window.addEventListener("scroll", checkScroll)
         }, 500);
     }, false);
   }
+
   return (
     <div className="projects">
       <div className='title'>Projects</div>
